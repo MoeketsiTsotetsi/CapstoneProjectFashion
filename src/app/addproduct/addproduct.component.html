@@ -1,1 +1,25 @@
-<p>addproduct works!</p>
+<form>
+    <h2 class="text-center">Enter The Product Details Here</h2>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter Name" [(ngModel)]="product.name" required>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" name="price" placeholder="Enter the price" [(ngModel)]="product.price" required>
+    </div>
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="text" class="form-control" name="quantity" placeholder="Enter quantity" [(ngModel)]="product.quantity" required>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" class="form-control" name="image" placeholder="Enter image url"
+            [(ngModel)]="product.image" required>
+    </div>
+  
+    <div class="mb-3">
+        <input type="submit" value="Publish" class="btn btn-outline-success" (click)="publish()" /> &nbsp;
+        <input type="reset" value="Clear Fields" class="btn btn-outline-danger" />
+    </div>
+</form>

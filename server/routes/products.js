@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Product = require('../models/productModel');
 
-// Request URL: http://localhost:3000/products
+// get All products
 router.get('/', function (req, res, next) {
     Product.find((err, data) => {
         if (err) throw err;
@@ -10,22 +10,39 @@ router.get('/', function (req, res, next) {
     })
 });
 
-// Request URL: http://localhost:3000/products/611f6d13585aa41144afc7b4
+// get a specific product
 router.get('/:id', function (req, res, next) {
-    Product.findById(req.params.id, (err, data) => {
+Product.findById(req.params.id, (err, data) => {
         if (err) throw err;
         res.send(data);
     })
 });
 
-// Request URL: http://localhost:3000/products
-// Header: Content/Type: application/json
-// Request Body: { "name": "Product One", "price": 12000, "quantity": 5, "image": "https://d3nn873nee648n.cloudfront.net/900x600/14762/8-SM556400.jpg" }
+// posting a new product
 router.post('/', function (req, res, next) {
     Product.create(req.body, (err, data) => {
         if (err) throw err;
         res.send(data);
     })
 });
+
+
+// deleting a  product
+router.delete('/:id', function (req, res, next) {
+
+        Product.findByIdAndDelete(req.params.id,(error,data) =>{
+            if(error) throw error;
+            res.send('Deleted Successfully');
+        })
+    });
+
+
+    // updating a product
+router.patch('/:id', function (req, res, next) {
+        Product.findByIdAndUpdate(req.params.id,req.body,(error,data) =>{
+            if(error) throw error;
+            res.send(data);
+        })
+    });
 
 module.exports = router;

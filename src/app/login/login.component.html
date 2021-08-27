@@ -1,6 +1,8 @@
+
+<h2 class="text-center">Login Here</h2>
 <form>
     <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
+        <label for="name" class="form-label">Username</label>
         <input type="text" class="form-control" name="username" placeholder="Enter Username" [(ngModel)]="user.username" required>
     </div>
     <div class="mb-3">
@@ -9,7 +11,7 @@
     </div>
     
     <div class="mb-3">
-        <input type="submit" value="Register" class="btn btn-outline-success" (click)="login()" /> &nbsp;
+        <button class="btn btn-outline-success" (click)="login()"type="submit">Login</button> &nbsp;
         <input type="reset" value="Clear Fields" class="btn btn-outline-danger" /> &nbsp;
         <a routerLink="/register"type="button" class="btn btn-outline-info">Register</a>
     </div>

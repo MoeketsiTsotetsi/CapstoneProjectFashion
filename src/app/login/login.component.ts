@@ -28,7 +28,14 @@ export class LoginComponent implements OnInit {
     if (this.isUserExists()) {
       alert('You are loggedIn Sucessfully.');
       localStorage.setItem('isLoggedIn', "true");
-      this._router.navigate(['/home']);
+      if(this.user.type =='Admin'){
+        this._router.navigate(['/addproduct']);
+      }else{
+        this._router.navigate(['/home']);
+      }
+      
+      
+      
     } else {
       alert('Login Failed. You can try again.');
     }
@@ -37,10 +44,14 @@ export class LoginComponent implements OnInit {
   isUserExists() {
     for (const user of this.users) {
       if (user.username == this.user.username && user.password == this.user.password) {
+        this.user = user;
+
         return true;
       }
     }
     return false;
   }
+
+  
 
 }
