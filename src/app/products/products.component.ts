@@ -24,7 +24,7 @@ cartItems:Array<Product> = [];
     })
   }
 
-  buyNow(product: Product){
+  buyNow(product:any){
     this.cartItems = this._cartService.loadCartItems();
     for (var i = 0; i < this.cartItems.length; i++) {
       if (product.id == this.cartItems[i].id) {
@@ -39,4 +39,8 @@ cartItems:Array<Product> = [];
 
   }
 
-}
+  }
+
+  
+
+

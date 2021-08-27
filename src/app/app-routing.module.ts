@@ -6,6 +6,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'main',component:MainComponent},
   {path:'products',component:ProductsComponent},
   {path:'register',component:RegisterComponent},
+  {path:'product-detail/:id',component:ProductDetailComponent}
 ];
 
 @NgModule({
