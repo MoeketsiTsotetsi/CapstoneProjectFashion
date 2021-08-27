@@ -1,0 +1,9 @@
+.welcomepic{
+width:  100%;
+border-radius: 0.2rem;
+height: 50%;
+}
+
+body{
+    background-color: rgb(32, 238, 32);
+}

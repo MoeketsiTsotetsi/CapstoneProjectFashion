@@ -1,0 +1,16 @@
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="username" placeholder="Enter Username" [(ngModel)]="user.username" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter Password" [(ngModel)]="user.password" required>
+    </div>
+    
+    <div class="mb-3">
+        <input type="submit" value="Register" class="btn btn-outline-success" (click)="login()" /> &nbsp;
+        <input type="reset" value="Clear Fields" class="btn btn-outline-danger" /> &nbsp;
+        <a routerLink="/register"type="button" class="btn btn-outline-info">Register</a>
+    </div>
+</form>
